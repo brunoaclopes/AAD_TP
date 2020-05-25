@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AAD_TP", "AAD_TP\AAD_TP.csproj", "{ED6530AE-4A06-4D6B-95FD-20512C35C492}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED6530AE-4A06-4D6B-95FD-20512C35C492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED6530AE-4A06-4D6B-95FD-20512C35C492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED6530AE-4A06-4D6B-95FD-20512C35C492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED6530AE-4A06-4D6B-95FD-20512C35C492}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69E838DB-A836-46BE-A451-450BE7E638FA}
+	EndGlobalSection
+EndGlobal
