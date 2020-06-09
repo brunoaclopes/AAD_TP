@@ -49,6 +49,10 @@ namespace AAD_TP.View
                 ServiceLocator.Current.GetInstance<DatabaseService>()
                     .GetDeslocamentos(ServiceLocator.Current.GetInstance<MainViewModel>().SelectedRecurso.Id) );
 
+            ServiceLocator.Current.GetInstance<MainViewModel>().Recursos = new ObservableCollection<Recurso>(
+                ServiceLocator.Current.GetInstance<DatabaseService>().GetRecursos()
+                    .OrderBy(recurso => recurso.Id_Seccao));
+
             ServiceLocator.Current.GetInstance<RecursoInfoUserControl>().AddDeslocamentoButton.IsEnabled = true;
 
             Close();
