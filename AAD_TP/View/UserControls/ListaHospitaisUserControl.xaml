@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="AAD_TP.View.ListaHospitaisUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AAD_TP.View"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             DataContext="{Binding Main, Source={StaticResource Locator}}"
+             d:DesignHeight="540" d:DesignWidth="1020">
+    <Grid>
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Background="LightGray" Grid.Row="0">
+            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" Style="{StaticResource MaterialDesignIconForegroundButton}" Height="35" Width="35">
+                <materialDesign:PackIcon Kind="Add" Foreground="Gray"/>
+            </Button>
+        </Grid>-->
+        <ListView x:Name="ListaHospitais" ItemsSource="{Binding Hospitais}" SelectionChanged="ListaHospitais_OnSelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+                        DisplayMemberBinding="{Binding Id}"
+                        Header="ID" />
+                    <GridViewColumn
+                        DisplayMemberBinding="{Binding Nome}"
+                        Header="Nome" />
+                    <GridViewColumn
+                        DisplayMemberBinding="{Binding Codigo_Postal}"
+                        Header="Codigo-Postal" />
+                    <GridViewColumn
+                        DisplayMemberBinding="{Binding Tipo}"
+                        Header="Tipo" />
+                    <GridViewColumn
+                        DisplayMemberBinding="{Binding Arruamento}"
+                        Header="Arruamento" />
+                    <GridViewColumn
+                        DisplayMemberBinding="{Binding Localidade}"
+                        Header="Localidade" />
+                    <GridViewColumn
+                        DisplayMemberBinding="{Binding Concelho}"
+                        Header="Concelho" />
+                    <GridViewColumn
+                        DisplayMemberBinding="{Binding Distrito}"
+                        Header="Distrito" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

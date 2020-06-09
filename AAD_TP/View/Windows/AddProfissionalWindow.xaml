@@ -1,0 +1,50 @@
+﻿<Window x:Class="AAD_TP.View.AddProfissionalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AAD_TP.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:System="clr-namespace:AAD_TP.Model"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        DataContext="{Binding Main, Source={StaticResource Locator}}"
+        Title="Novo Profissional" Background="Transparent" AllowsTransparency="True" Height="400" Width="280" Icon="../signofhealth_medical_10742.ico" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="enumValues"
+                            MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="System:Tipo_Profissional"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    <Grid>
+        <Rectangle Fill="White" RadiusX="8" RadiusY="8"></Rectangle>
+        <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Novo Profissional" FontSize="25" Foreground="DimGray" Margin="0 5"/>
+            <StackPanel Orientation="Horizontal" Margin="0 20 0 10">
+                <materialDesign:PackIcon Kind="Person" VerticalAlignment="Center" Margin="5"/>
+                <TextBox Name="NomeTextBox" materialDesign:HintAssist.Hint="Nome"
+                    VerticalAlignment="Center" Width="200">
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 10">
+                <materialDesign:PackIcon Kind="PersonBadge" VerticalAlignment="Center" Margin="5"/>
+                <ComboBox Name="TipoComboBox" materialDesign:HintAssist.Hint="Tipo" Width="200" ItemsSource="{Binding Source={StaticResource enumValues}}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 10">
+                <materialDesign:PackIcon Kind="AcademicCap" VerticalAlignment="Center" Margin="5"/>
+                <TextBox Name="EspecialidadeTextBox" materialDesign:HintAssist.Hint="Especialidade"
+                         VerticalAlignment="Center" Width="200">
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 10">
+                <materialDesign:PackIcon Kind="HospitalBuilding" VerticalAlignment="Center" Margin="5"/>
+                <ComboBox Name="HospitalComboBox" materialDesign:HintAssist.Hint="Hospital"
+                          IsEditable="True" Width="200" ItemsSource="{Binding Hospitais}" DisplayMemberPath="Nome"/>
+            </StackPanel>
+            <Button Name="AddButton" Style="{StaticResource MaterialDesignRaisedButton}"  Width="100" Margin="10 20 10 10" Click="AddButton_OnClick">Adicionar</Button>
+            <Button Name="CancelButton" Style="{StaticResource MaterialDesignOutlinedButton}"  Width="100" Margin="10" Click="CancelButton_OnClick">Cancelar</Button>
+        </StackPanel>
+    </Grid>
+</Window>

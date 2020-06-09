@@ -12,6 +12,7 @@
   See http://www.galasoft.ch/mvvm
 */
 
+using AAD_TP.Services;
 using CommonServiceLocator;
 using GalaSoft.MvvmLight.Ioc;
 
@@ -42,6 +43,7 @@ namespace AAD_TP.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<DatabaseService>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
